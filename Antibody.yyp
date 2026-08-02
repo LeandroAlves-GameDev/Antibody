@@ -42,6 +42,7 @@
     {"id":{"name":"rm_fase","path":"rooms/rm_fase/rm_fase.yy",},},
     {"id":{"name":"spr_bullet","path":"sprites/spr_bullet/spr_bullet.yy",},},
     {"id":{"name":"spr_gun","path":"sprites/spr_gun/spr_gun.yy",},},
+    {"id":{"name":"spr_inimigo1","path":"sprites/spr_inimigo1/spr_inimigo1.yy",},},
     {"id":{"name":"spr_player","path":"sprites/spr_player/spr_player.yy",},},
   ],
   "resourceType":"GMProject",
