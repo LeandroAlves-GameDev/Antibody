@@ -1,4 +1,4 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 
-segura_arma()
+atualiza_posicao_arma()

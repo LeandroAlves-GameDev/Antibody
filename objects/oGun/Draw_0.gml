@@ -1,8 +1,6 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 
-grav_bullet()
+draw_self()
 
-destroi_tiro()
-
-reacao_em_cadeia()
+desenha_trajetoria()

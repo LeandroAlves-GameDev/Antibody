@@ -1,8 +1,7 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 
-grav_bullet()
+event_inherited();
 
-destroi_tiro()
-
-reacao_em_cadeia()
+vida_colisor = 1
+tipo_reacao = "quebravel"

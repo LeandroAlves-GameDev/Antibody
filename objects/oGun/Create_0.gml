@@ -12,15 +12,15 @@ mira_arma = function()
 
 atira_arma = function()
 {
+    var dist = 16 //Criando uma variavel temporaria para calcular a distancia do cabo
+    //da arma até a ponta dela
+    var ponta_x = x + lengthdir_x(dist, image_angle)
+    var ponta_y = y + lengthdir_y(dist, image_angle)
+    
     //Criando o metodo de atirar no jogo
     //se eu pressionar o botão esquerdo do mouse
     if(mouse_check_button_pressed(mb_left))
     {
-        var dist = 16 //Criando uma variavel temporaria para calcular a distancia do cabo
-        //da arma até a ponta dela
-        var ponta_x = x + lengthdir_x(dist, image_angle)
-        var ponta_y = y + lengthdir_y(dist, image_angle)
-        
         //então ele vai rodar o cria tiro
         //que consiste em criar uma instancia fazendo gerar um objeto bullet ou seja a bala
         var cria_tiro = instance_create_layer(ponta_x, ponta_y, "Gun", oBullet)
@@ -31,4 +31,28 @@ atira_arma = function()
         cria_tiro.image_angle = image_angle
         //por fim o image_angle vai ser igual a ele mesmo
     }
+}
+
+//Criando um metodo para fazer a trajetoria do tiro
+desenha_trajetoria = function()
+{
+    var dist = 16 //Criando uma variavel temporaria para calcular a distancia do cabo
+    //da arma até a ponta dela
+    var ponta_x = x + lengthdir_x(dist, image_angle)
+    var ponta_y = y + lengthdir_y(dist, image_angle)
+    
+    draw_set_color(c_white)
+    for (var tempo = 1; tempo <= 30; tempo += 3) 
+    {
+    	//Criando uma variavel para calcular o trajeto
+        var pos_x = ponta_x + lengthdir_x(10 * tempo, image_angle)
+        
+        var grav = 0.1
+        var pos_y = ponta_y + lengthdir_y(10 * tempo, image_angle) + (0.5 * grav * tempo * tempo)
+        
+        //criando um caminho pontilhado para mostrar o trajeto do tiro
+        draw_circle(pos_x, pos_y, 2, false);
+    }
+    //apos o fim do for, teremos o indicador de mira
+    draw_circle(pos_x, pos_y, 4, true)
 }

@@ -1,19 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"oGun",
+  "%Name":"oColisorpai",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oGun",
+  "name":"oColisorpai",
   "overriddenProperties":[],
   "parent":{
-    "name":"Player",
-    "path":"folders/Objects/Player.yy",
+    "name":"Eventos de colisao",
+    "path":"folders/Objects/Eventos de colisao.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oSolidoPai",
+    "path":"objects/oSolidoPai/oSolidoPai.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -32,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_gun",
-    "path":"sprites/spr_gun/spr_gun.yy",
+    "name":"spr_colisorpai",
+    "path":"sprites/spr_colisorpai/spr_colisorpai.yy",
   },
   "spriteMaskId":null,
   "visible":true,

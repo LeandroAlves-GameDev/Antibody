@@ -1,17 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"oGun",
+  "%Name":"oFragmento",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oGun",
+  "name":"oFragmento",
   "overriddenProperties":[],
   "parent":{
-    "name":"Player",
-    "path":"folders/Objects/Player.yy",
+    "name":"Eventos de colisao",
+    "path":"folders/Objects/Eventos de colisao.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -32,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_gun",
-    "path":"sprites/spr_gun/spr_gun.yy",
+    "name":"spr_fragmento",
+    "path":"sprites/spr_fragmento/spr_fragmento.yy",
   },
   "spriteMaskId":null,
   "visible":true,

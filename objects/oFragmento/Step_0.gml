@@ -1,8 +1,4 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 
-grav_bullet()
-
-destroi_tiro()
-
-reacao_em_cadeia()
+destroi_frags()
