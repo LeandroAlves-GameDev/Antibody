@@ -1,13 +1,16 @@
 {
   "$GMObject":"",
-  "%Name":"oSolidoPai",
-  "eventList":[],
+  "%Name":"oScreenshake",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"oSolidoPai",
+  "name":"oScreenshake",
   "overriddenProperties":[],
   "parent":{
-    "name":"Inimigos",
-    "path":"folders/Objects/Inimigos.yy",
+    "name":"Detalhes",
+    "path":"folders/Objects/Detalhes.yy",
   },
   "parentObjectId":null,
   "persistent":false,

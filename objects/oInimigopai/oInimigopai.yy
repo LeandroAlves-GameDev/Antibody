@@ -1,18 +1,22 @@
 {
   "$GMObject":"",
-  "%Name":"oFragmento",
+  "%Name":"oInimigopai",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oFragmento",
+  "name":"oInimigopai",
   "overriddenProperties":[],
   "parent":{
     "name":"Inimigos",
     "path":"folders/Objects/Inimigos.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oSolidoPai",
+    "path":"objects/oSolidoPai/oSolidoPai.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_fragmento",
-    "path":"sprites/spr_fragmento/spr_fragmento.yy",
+    "name":"spr_colisorpai",
+    "path":"sprites/spr_colisorpai/spr_colisorpai.yy",
   },
   "spriteMaskId":null,
   "visible":true,

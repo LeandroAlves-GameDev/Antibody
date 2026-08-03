@@ -1,15 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"oSolidoPai",
-  "eventList":[],
+  "%Name":"oInimigo1",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"oSolidoPai",
+  "name":"oInimigo1",
   "overriddenProperties":[],
   "parent":{
     "name":"Inimigos",
     "path":"folders/Objects/Inimigos.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"oInimigopai",
+    "path":"objects/oInimigopai/oInimigopai.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -27,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_inimigo_1",
+    "path":"sprites/spr_inimigo_1/spr_inimigo_1.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

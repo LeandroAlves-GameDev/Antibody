@@ -40,11 +40,16 @@ destroi_tiro = function()
 //Criando um metodo de colisão do tiro e fazendo gerar um efeito de reação
 reacao_em_cadeia = function()
 {
-    var _colisor = instance_place(x, y, oColisorpai)
+    var _inimigo = instance_place(x, y, oInimigopai)
     //ele vai verificar se minha posição está colidindo com alguma outra instancia
-    if(_colisor != noone)
+    if(_inimigo != noone)
     {
-        _colisor.recebe_dano(1, image_angle)
+        _inimigo.recebe_dano(1, image_angle)
+        if (instance_exists(_inimigo))
+        {
+        _inimigo.alarme_hit = 10
+        }
+        oScreenshake.treme = 15
         //se estiver então ele 
         //destroi meu tiro
         instance_destroy()

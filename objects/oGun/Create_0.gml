@@ -12,7 +12,7 @@ mira_arma = function()
 
 atira_arma = function()
 {
-    var dist = 16 //Criando uma variavel temporaria para calcular a distancia do cabo
+    var dist = 32 //Criando uma variavel temporaria para calcular a distancia do cabo
     //da arma até a ponta dela
     var ponta_x = x + lengthdir_x(dist, image_angle)
     var ponta_y = y + lengthdir_y(dist, image_angle)
@@ -36,7 +36,7 @@ atira_arma = function()
 //Criando um metodo para fazer a trajetoria do tiro
 desenha_trajetoria = function()
 {
-    var dist = 16 //Criando uma variavel temporaria para calcular a distancia do cabo
+    var dist = 32 //Criando uma variavel temporaria para calcular a distancia do cabo
     //da arma até a ponta dela
     var ponta_x = x + lengthdir_x(dist, image_angle)
     var ponta_y = y + lengthdir_y(dist, image_angle)

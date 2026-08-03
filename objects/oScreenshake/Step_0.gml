@@ -1,8 +1,4 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 
-atualiza_posicao_arma()
-
-perde_vida()
-
-hitflash()
+treme_tela()
