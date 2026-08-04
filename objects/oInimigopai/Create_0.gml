@@ -14,7 +14,8 @@ mover = function()
 {
     if (!ja_morreu)
     {
-        x -= velocidade_andando;
+        y += velocidade_andando;
+        
     }
 }
 
@@ -35,7 +36,7 @@ reagir = function(_direcao)
             //Criando um sistema de gerar fragmentos
             var cria_frag = instance_create_layer(x, y, "Inimigos", oFragmento)
             cria_frag.speed = 2
-            cria_frag.direction = random_range(-60, 60)
+            cria_frag.direction = random_range(70, 110)
         }
        
     }
@@ -53,6 +54,7 @@ recebe_dano = function(_dano, _direcao)
     if(vida_inimigo <= 0)
     {
         //se for menor que zero então ele roda a função reagir
+        oControlador.inimigos_derrotados += 1;
         reagir(_direcao)
     }
     

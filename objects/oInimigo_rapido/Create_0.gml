@@ -1,8 +1,8 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 
-mover()
+event_inherited();
 
-tira_vida_player()
-
-hitflash()
+vida_inimigo = 3
+velocidade_andando = 1.5;
+tipo_reacao = "quebravel"

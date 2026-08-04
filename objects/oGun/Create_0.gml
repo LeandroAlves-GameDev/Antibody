@@ -4,10 +4,30 @@
 //Criando um metodo de mirar com a arma
 mira_arma = function()
 {
-    var dir = point_direction(x, y, mouse_x, mouse_y)
-    var range = angle_difference(dir, 0)
-    var angle = clamp(range, -10, 80)
-    image_angle = angle
+    if (mouse_y >= y)
+    {
+        if (mouse_x < x) 
+        {
+            image_angle = 180;
+        } 
+        else 
+        {
+            image_angle = 0;
+        }
+    }
+    else
+    {
+        var dir = point_direction(x, y, mouse_x, mouse_y)
+        image_angle = clamp(dir, 0, 180)
+    }
+    if(image_angle > 90 && image_angle <= 180)
+    {
+        image_yscale = -1
+    }
+    else 
+    {
+    	image_yscale = 1
+    }
 }
 
 atira_arma = function()
@@ -30,6 +50,7 @@ atira_arma = function()
         //o cria tiro vai receber uma direção com base no image angle
         cria_tiro.image_angle = image_angle
         //por fim o image_angle vai ser igual a ele mesmo
+        cria_tiro.tipo = oControlador.tipo_tiro_atual
     }
 }
 

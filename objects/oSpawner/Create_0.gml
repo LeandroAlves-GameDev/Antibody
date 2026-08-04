@@ -1,8 +1,6 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 
-mover()
+tempo_spawn = 60; 
+cronometro = tempo_spawn;
 
-tira_vida_player()
-
-hitflash()

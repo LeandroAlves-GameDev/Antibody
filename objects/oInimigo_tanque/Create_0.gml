@@ -1,8 +1,7 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 
-mover()
+event_inherited();
 
-tira_vida_player()
-
-hitflash()
+vida_inimigo = 5
+velocidade_andando = 0.8

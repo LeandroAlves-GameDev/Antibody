@@ -7,6 +7,11 @@ vida_max = 3
 //criando a vida atual dele
 vida_atual = 3
 
+//Criando a velocidade horizontal do player
+velh = 2
+
+
+
 //Criando um metodo onde ele vai segurar a arma
 segura_arma = function()
 {

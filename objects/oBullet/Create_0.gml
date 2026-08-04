@@ -11,6 +11,8 @@ grav_direction = 270
 gravity = 0.1
 //aplicando uma variavel de gravity para fazer o tiro realmente ter um peso
 
+
+
 //Criando um sistema metodo de gravidade para fazer nosso tiro cair
 grav_bullet = function()
 {
@@ -37,6 +39,10 @@ destroi_tiro = function()
     }
 }
 
+//Criando um sistema de tiros para nosso jogo
+tipo = 0
+//por padrão o tiro normal será zero
+
 //Criando um metodo de colisão do tiro e fazendo gerar um efeito de reação
 reacao_em_cadeia = function()
 {
@@ -44,14 +50,62 @@ reacao_em_cadeia = function()
     //ele vai verificar se minha posição está colidindo com alguma outra instancia
     if(_inimigo != noone)
     {
-        _inimigo.recebe_dano(1, image_angle)
-        if (instance_exists(_inimigo))
+        switch (tipo) 
         {
-        _inimigo.alarme_hit = 10
+            //Criando o case 0 que será nosso tiro normal
+            case 0:
+            {
+                _inimigo.recebe_dano(1, image_angle)
+                if (instance_exists(_inimigo)) 
+                {
+                    _inimigo.alarme_hit = 10
+                }
+                break;
+            }
+                //fazendo o case 1 que será o tiro explosivo	
+            case 1:
+            {
+                _inimigo.recebe_dano(2, image_angle)
+                var raio = 110
+                with (oInimigopai)
+                {
+                    //se estiver dentro do raio da explosão (e não for o que já morreu/levou o tiro direto)
+                    if (point_distance(x, y, other.x, other.y) <= raio)
+                    {
+                        recebe_dano(1, other.image_angle)
+                        alarme_hit = 10
+                    }
+                }
+                break;
+            }	 
+            case 3: //Tiro Fragmentado
+            {
+                _inimigo.recebe_dano(3, image_angle);
+                if (instance_exists(_inimigo)) 
+                {
+                    _inimigo.alarme_hit = 10
+                }
+                
+                var quantidade_estilhacos = 4;
+                var angulo_inicial = image_angle - 45
+                var incremento = 90 / (quantidade_estilhacos - 1)
+                
+                for (var i = 0; i < quantidade_estilhacos; i++)
+                {
+                    var angulo_atual = angulo_inicial + (incremento * i)
+                    
+                    var estilhaco = instance_create_layer(x, y, "Gun", oBullet)
+                    estilhaco.speed = 5
+                    estilhaco.direction = angulo_atual
+                    estilhaco.image_angle = angulo_atual
+                    
+                    estilhaco.tipo = 0
+                }
+                
+                break;
+            }                   
         }
-        oScreenshake.treme = 15
-        //se estiver então ele 
-        //destroi meu tiro
-        instance_destroy()
+        oScreenshake.treme = 15;
+        instance_destroy();
     }
 }
