@@ -11,9 +11,12 @@ hitflash()
 var left = keyboard_check(ord("A")) || keyboard_check(vk_left)
 var right = keyboard_check(ord("D")) || keyboard_check(vk_right)
 
+var dir_movimento = right - left
+
 if(right|| left)
 {
-    x += (right - left) * velh
+    x += dir_movimento * velh
+    image_xscale = dir_movimento
 }
 
 
