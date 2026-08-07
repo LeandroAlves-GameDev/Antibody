@@ -5,3 +5,5 @@ event_inherited();
 
 vida_inimigo = 5
 velocidade_andando = 0.8
+
+valor_pontos = 200

@@ -1,6 +1,7 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 
+valor_pontos = 0
 
 vida_inimigo = 1
 
@@ -23,7 +24,7 @@ mover = function()
 reagir = function(_direcao)
 {
     var _chance_frag = random(100)
-    var _quantidade = random_range(2, 5)
+    var _quantidade = random_range(1, 3)
     //fazendo ele gerar fragmentos
     
     //criando um for para espalhar os fragmentos
@@ -31,7 +32,7 @@ reagir = function(_direcao)
     {
         //se meu chance frag for menor que 60% eu vou ter 60% de chance de causar uma reação em cadeia
         //que vai destruir meus inimigos
-        if(_chance_frag < 60)
+        if(_chance_frag < 35)
         {
             //Criando um sistema de gerar fragmentos
             var cria_frag = instance_create_layer(x, y, "Inimigos", oFragmento)
@@ -54,7 +55,7 @@ recebe_dano = function(_dano, _direcao)
     if(vida_inimigo <= 0)
     {
         //se for menor que zero então ele roda a função reagir
-        oControlador.inimigos_derrotados += 1;
+        oControlador.pontos += valor_pontos;
         reagir(_direcao)
     }
     
@@ -67,6 +68,7 @@ tira_vida_player = function()
     
     if(_player_atingido != noone)
     {
+        audio_play_sound(snd_hit_player, 1, 0)
         _player_atingido.alarme_hit = 10
         oScreenshake.treme = 5
         _player_atingido.vida_atual -= 1

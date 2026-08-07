@@ -1,6 +1,8 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 
+cooldown_tiro = 0
+
 //Criando um metodo de mirar com a arma
 mira_arma = function()
 {
@@ -39,7 +41,7 @@ atira_arma = function()
     
     //Criando o metodo de atirar no jogo
     //se eu pressionar o botão esquerdo do mouse
-    if(mouse_check_button_pressed(mb_left))
+    if(mouse_check_button_pressed(mb_left) && cooldown_tiro <= 0)
     {
         //então ele vai rodar o cria tiro
         //que consiste em criar uma instancia fazendo gerar um objeto bullet ou seja a bala
@@ -51,6 +53,14 @@ atira_arma = function()
         cria_tiro.image_angle = image_angle
         //por fim o image_angle vai ser igual a ele mesmo
         cria_tiro.tipo = oControlador.tipo_tiro_atual
+        switch(oControlador.tipo_tiro_atual)
+        {
+            case 0: cooldown_tiro = 10; break; // Tiro normal (rápido)
+            case 1: cooldown_tiro = 30; break; // Tiro tanque (mais lento)
+            case 3: cooldown_tiro = 60; break; // Tiro super (muito lento)
+            default: cooldown_tiro = 15; break; // Padrão
+        }
+        
     }
 }
 
@@ -74,6 +84,6 @@ desenha_trajetoria = function()
         //criando um caminho pontilhado para mostrar o trajeto do tiro
         draw_circle(pos_x, pos_y, 2, false);
     }
-    //apos o fim do for, teremos o indicador de mira
+    //apos o fim do for teremos o indicador de mira
     draw_circle(pos_x, pos_y, 4, true)
 }

@@ -9,8 +9,8 @@
   "name":"oFragmento",
   "overriddenProperties":[],
   "parent":{
-    "name":"Inimigos",
-    "path":"folders/Objects/Inimigos.yy",
+    "name":"Detalhes",
+    "path":"folders/Objects/Detalhes.yy",
   },
   "parentObjectId":null,
   "persistent":false,

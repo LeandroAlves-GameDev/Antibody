@@ -1,5 +1,7 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
+//Rodando a musica do jogo
+audio_play_sound(snd_gameplay, 1, 1)
 
 
 //Criando o sistema de vida do linfocito
@@ -8,8 +10,8 @@ vida_max = 3
 vida_atual = 3
 
 //Criando a velocidade horizontal do player
-velh = 2
-
+velh = 3
+velv = 3
 
 
 //Criando um metodo onde ele vai segurar a arma
@@ -49,7 +51,8 @@ perde_vida = function()
     //se meu vida atual for menor ou igual a 0
     if(vida_atual <= 0)
     {
-        room_restart()
+        global.sala_destino = rm_inicio
+        room_goto(global.sala_destino)
     }
     
 }
@@ -59,13 +62,13 @@ perde_vida = function()
 desenha_barra_vida = function()
 {
     //Criando coordenadas para posicionar nossa barra de vida
-    var pos_x = 35
-    var pos_y = 115
+    var pos_x = 32
+    var pos_y = 115 * 7.5
     
     //Criando o sistema de perde vida com base nos frames que tenho
     var _frame_atual = round((1 - (vida_atual / vida_max)) * 3)
     
     //Criando o desenho da moldura da barra de vida
-    draw_sprite_ext(spr_barra_moldura_vida, _frame_atual, pos_x, pos_y, 4, 4, 0, c_white, 1)
+    draw_sprite_ext(spr_barra_moldura_vida, _frame_atual, pos_x, pos_y, 1, 1, 0, c_white, 1)
     
 }

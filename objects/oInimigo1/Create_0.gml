@@ -3,5 +3,7 @@
 
 event_inherited();
 
-vida_inimigo = 1
+vida_inimigo = 2
 tipo_reacao = "quebravel"
+
+valor_pontos = 100

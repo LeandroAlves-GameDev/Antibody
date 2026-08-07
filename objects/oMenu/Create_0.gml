@@ -84,9 +84,8 @@ controle_menu = function()
 desenha_menu = function()
 {
     //definindo a posição do botão 
-    var posicao_x = 64
-    var meio_y = room_height / 1.5
-    
+    var posicao_x = 32
+    var meio_y = room_height / 3
     
     for(var i = 0; i < 3; i++)
     {
@@ -95,11 +94,11 @@ desenha_menu = function()
         var frame_atual = 0;
         
         var posicao_y_atual = meio_y + (i * 125)
-        draw_sprite_ext(sprite_atual, frame_atual, posicao_x, posicao_y_atual, 1, 1, 0, draw_get_color(), 1);
+        draw_sprite_ext(sprite_atual, frame_atual, posicao_x, posicao_y_atual, .8, .8, 0, draw_get_color(), 1);
         
         if(i == index)
         {
-            draw_sprite_ext(spr_botao_contorno, 0, posicao_x, posicao_y_atual, 1, 1, 0, c_white, 1)
+            draw_sprite_ext(spr_botao_contorno, 0, posicao_x, posicao_y_atual, .8, .8, 0, c_white, 1)
         }
         
         

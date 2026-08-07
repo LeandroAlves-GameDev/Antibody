@@ -10,6 +10,6 @@ if (alarme_hit > 0)
 }
 else 
 {
-    // Se não estiver tomando hit, desenha normal
+    //Se não estiver tomando hit desenha normal
     draw_self();	
 }

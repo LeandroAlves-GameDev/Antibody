@@ -25,7 +25,7 @@ frag_aplica_dano = function()
     //ele vai verificar se minha posição está colidindo com alguma outra instancia
     if(_frag_dano != noone)
     {
-        oScreenshake.treme = 8
+        oScreenshake.treme = 5
         _frag_dano.recebe_dano(1, image_angle)
         //se estiver então ele 
         //destroi meu fragmento

@@ -55,6 +55,7 @@ reacao_em_cadeia = function()
             //Criando o case 0 que será nosso tiro normal
             case 0:
             {
+                audio_play_sound(snd_hit, 1, 0)
                 _inimigo.recebe_dano(1, image_angle)
                 if (instance_exists(_inimigo)) 
                 {
@@ -65,6 +66,7 @@ reacao_em_cadeia = function()
                 //fazendo o case 1 que será o tiro explosivo	
             case 1:
             {
+                audio_play_sound(snd_hit, 1, 0)
                 _inimigo.recebe_dano(2, image_angle)
                 var raio = 110
                 with (oInimigopai)
@@ -72,36 +74,45 @@ reacao_em_cadeia = function()
                     //se estiver dentro do raio da explosão (e não for o que já morreu/levou o tiro direto)
                     if (point_distance(x, y, other.x, other.y) <= raio)
                     {
+                        
                         recebe_dano(1, other.image_angle)
                         alarme_hit = 10
+                        instance_create_layer(x, y, "Detalhes", oExplosao);
                     }
                 }
                 break;
             }	 
             case 3: //Tiro Fragmentado
             {
-                _inimigo.recebe_dano(3, image_angle);
+                audio_play_sound(snd_hit, 1, 0)
+                _inimigo.recebe_dano(3, image_angle)
                 if (instance_exists(_inimigo)) 
                 {
                     _inimigo.alarme_hit = 10
                 }
                 
-                var quantidade_estilhacos = 4;
-                var angulo_inicial = image_angle - 45
-                var incremento = 90 / (quantidade_estilhacos - 1)
-                
-                for (var i = 0; i < quantidade_estilhacos; i++)
+                var chance_fragmentar = 40
+                if (random(100) <= chance_fragmentar)
                 {
-                    var angulo_atual = angulo_inicial + (incremento * i)
+                   var quantidade_estilhacos = 4
+                   var angulo_inicial = image_angle - 45
+                   var incremento = 90 / (quantidade_estilhacos - 1)
                     
-                    var estilhaco = instance_create_layer(x, y, "Gun", oBullet)
-                    estilhaco.speed = 5
-                    estilhaco.direction = angulo_atual
-                    estilhaco.image_angle = angulo_atual
-                    
-                    estilhaco.tipo = 0
+                   for (var i = 0; i < quantidade_estilhacos; i++)
+                   {
+                       var angulo_atual = angulo_inicial + (incremento * i)
+                       
+                       var estilhaco = instance_create_layer(x, y, "Gun", oBullet)
+                       estilhaco.speed = 5
+                       estilhaco.direction = angulo_atual
+                       estilhaco.image_angle = angulo_atual
+                       
+                       estilhaco.tipo = 3
+                       estilhaco.image_xscale = 0.5
+                       estilhaco.image_yscale = 0.5
+                       
+                   }
                 }
-                
                 break;
             }                   
         }
