@@ -1,6 +1,8 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
 
+alternar_pausa()
+
 if (pontos >= 3000 && !tiro_explosivo_liberado)
 {
     tiro_explosivo_liberado = true;
@@ -10,7 +12,7 @@ if (pontos >= 3000 && !tiro_explosivo_liberado)
 }
 
 //Tiro Fragmentado 2500 pontos
-if (pontos >= 5000 && !tiro_fragmentado_liberado)
+if (pontos >= 7000 && !tiro_fragmentado_liberado)
 {
     tiro_fragmentado_liberado = true;
     tipo_tiro_atual = 3; 

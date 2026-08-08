@@ -25,8 +25,13 @@ frag_aplica_dano = function()
     //ele vai verificar se minha posição está colidindo com alguma outra instancia
     if(_frag_dano != noone)
     {
-        oScreenshake.treme = 5
+        audio_play_sound(snd_hit, 1, 0)
+        oScreenshake.treme = 3
         _frag_dano.recebe_dano(1, image_angle)
+        if (instance_exists(_frag_dano)) 
+        {
+            _frag_dano.alarme_hit = 10;
+        }
         //se estiver então ele 
         //destroi meu fragmento
         instance_destroy()

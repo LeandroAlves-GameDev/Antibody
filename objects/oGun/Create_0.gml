@@ -55,10 +55,10 @@ atira_arma = function()
         cria_tiro.tipo = oControlador.tipo_tiro_atual
         switch(oControlador.tipo_tiro_atual)
         {
-            case 0: cooldown_tiro = 10; break; // Tiro normal (rápido)
-            case 1: cooldown_tiro = 30; break; // Tiro tanque (mais lento)
-            case 3: cooldown_tiro = 60; break; // Tiro super (muito lento)
-            default: cooldown_tiro = 15; break; // Padrão
+            case 0: cooldown_tiro = 20; break; //Tiro normal
+            case 1: cooldown_tiro = 30; break; //Tiro explosão
+            case 3: cooldown_tiro = 60; break; //Tiro espalha
+            default: cooldown_tiro = 15; break; 
         }
         
     }

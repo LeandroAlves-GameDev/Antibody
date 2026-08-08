@@ -70,7 +70,7 @@ tira_vida_player = function()
     {
         audio_play_sound(snd_hit_player, 1, 0)
         _player_atingido.alarme_hit = 10
-        oScreenshake.treme = 5
+        oScreenshake.treme = 4
         _player_atingido.vida_atual -= 1
         instance_destroy()
     }

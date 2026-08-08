@@ -4,3 +4,6 @@
 
 //Criando uma variavel global para indicar onde estamos indo
 global.sala_destino = noone
+
+//criando um sistema de pausa no jogo
+global.pausado = noone

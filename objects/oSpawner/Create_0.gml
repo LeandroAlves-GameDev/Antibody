@@ -8,7 +8,11 @@ cronometro = tempo_spawn
 dificulta_player = function()
 {
     var pontos_atuais = oControlador.pontos; 
-    if (pontos_atuais >= 5000)
+    if(pontos_atuais >= 10000)
+    {
+        tempo_spawn = 5
+    }
+    else if (pontos_atuais >= 5000)
     {
         tempo_spawn = 15
     }

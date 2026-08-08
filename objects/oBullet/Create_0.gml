@@ -102,7 +102,7 @@ reacao_em_cadeia = function()
                    {
                        var angulo_atual = angulo_inicial + (incremento * i)
                        
-                       var estilhaco = instance_create_layer(x, y, "Gun", oBullet)
+                       var estilhaco = instance_create_layer(lengthdir_x, lengthdir_y, "Gun", oBullet)
                        estilhaco.speed = 5
                        estilhaco.direction = angulo_atual
                        estilhaco.image_angle = angulo_atual

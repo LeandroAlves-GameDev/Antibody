@@ -53,6 +53,7 @@ perde_vida = function()
     {
         global.sala_destino = rm_inicio
         room_goto(global.sala_destino)
+        audio_stop_all()
     }
     
 }
