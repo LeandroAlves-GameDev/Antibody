@@ -10,7 +10,10 @@ index = 0
 
 //criando um array list com opçoes
 lista = ["Jogar", "Como Jogar", "Sair"]
-lista_sprites = [spr_botao_jogar, spr_botao_jogar, spr_botao_sair]
+lista_sprites = [spr_botao_jogar, spr_botao_sair]
+
+
+
 
 //Criando um metodo para rodar o menu
 roda_menu = function()
@@ -21,22 +24,21 @@ roda_menu = function()
         //no caso 0 ele vai direcionar para a room fase
     	case 0:
         {
-            show_message("Fase")
-            global.sala_destino = rm_fase
-            room_goto(global.sala_destino)
-            audio_stop_all()
+            //show_message("Fase")
+            if(global.estou_em_transicao == false)
+            {
+                //então ao apertar enter ele passa a ser verdadeiro e rodar a transição
+                global.estou_em_transicao = true
+                layer_sequence_create("sq_transicao", room_width / 2, room_height / 2, sq_transicao)
+                global.sala_destino = rm_fase
+                room_goto(global.sala_destino)
+                audio_stop_all()
+            }
+            
         }
         break
-        
-        case 1:
-        {
-            show_message("Como jogar")
-            //global.sala_destino = rm_fase
-            audio_stop_all()
-        }
-        break    
         //caso 2 ele vai encerrar o jogo
-        case 2:
+        case 1:
         {
             show_message("Jogo encerrado")
             game_end()
@@ -87,7 +89,7 @@ desenha_menu = function()
     var posicao_x = 32
     var meio_y = room_height / 3
     
-    for(var i = 0; i < 3; i++)
+    for(var i = 0; i < 2; i++)
     {
         var cor_atual = c_white;
         var sprite_atual = lista_sprites[i]

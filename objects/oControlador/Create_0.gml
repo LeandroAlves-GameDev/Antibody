@@ -60,6 +60,8 @@ alternar_pausa = function()
     }
     if(keyboard_check_pressed(vk_enter))
     {
+        instance_activate_all()
+        global.estou_em_transicao = false
         global.sala_destino = rm_inicio
         room_goto(global.sala_destino)
         //fazendo a musica parar
@@ -105,9 +107,9 @@ desenhar_menu_sair = function()
         var _botao_y = _centro_y + 30; 
         
         //desenhando a sprite do botão 
-        draw_sprite_ext(spr_botao_sair, 0, _botao_x, _botao_y - 25, _escala_botao, _escala_botao, 0, c_white, 1);
+        draw_sprite_ext(spr_botao_sair, 0, _botao_x, _botao_y - 30, _escala_botao, _escala_botao, 0, c_white, 1);
         
         //desenhando o contorno do botão
-        draw_sprite_ext(spr_botao_contorno, 0, _botao_x, _botao_y - 25, _escala_botao, _escala_botao, 0, c_white, 1);
+        draw_sprite_ext(spr_botao_contorno, 0, _botao_x, _botao_y - 30, _escala_botao, _escala_botao, 0, c_white, 1);
     }
 }
